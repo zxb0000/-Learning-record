@@ -1,0 +1,15 @@
+int ji_shu(int a) {
+	if (a%2 == 0)
+		return 0;
+	else return 1;
+}
+int main() {
+	int i = 1;
+	while (i <= 100) {
+		ji_shu(i);
+		if(ji_shu(i)==1) 
+			printf("%d \n", i);
+		i++;
+	}
+	
+}
