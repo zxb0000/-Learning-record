@@ -1,0 +1,46 @@
+
+void meut() {
+    printf("+++++++++++猜大小+++++++++++\n");
+    printf("+++++++++1.开始游戏+++++++++\n");
+    printf("+++++++++0.退出游戏+++++++++\n");
+}
+void game() {
+    int num, guess;
+    num = rand() % 10 + 1;//随机数范围为1到10
+    printf("请输入你要猜的数字：\n");
+    scanf("%d", &guess);
+    while (guess != num) {
+        if (guess > num) {
+            printf("太大了！请在猜一次！\n");
+            scanf("%d", &guess);
+        }
+        if (guess < num) {
+            printf("太小了！请在猜一次！\n");
+            scanf("%d", &guess);
+        }
+        if (guess == num) {
+            printf("真厉害！猜对了！\n");
+            Sleep(1000);
+            system("CLS");
+        }
+    }
+}
+int main(){
+    int choose;
+    srand((unsigned int)time(NULL));//设置rand函数的种子起点，利用时间戳
+    do {
+    meut();
+    scanf("%d", &choose);
+    system("cls");
+    switch(choose){
+        case 1:
+            game(); 
+            break;
+        case 2:
+
+        default:
+            printf("输入错误请重新输入！\n"); break;
+        }
+    } while (choose);
+    return 0;
+}
