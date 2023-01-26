@@ -1,0 +1,15 @@
+辗转相除法是利用以下性质来确定两个正整数 a 和 b 的最大公因子的：
+⒈ 令r为a/b所得余数（0≤r）
+若 r= 0，算法结束；b 即为答案。
+⒉ 互换：置 a←b，b←r，并返回第一步。
+case：
+int main() {
+    int a, b, r;
+    scanf("%d%d", &a, &b);
+    while(r=a%b){
+    
+    a = b;
+    b = r;
+    }
+    printf("%d \n", b);
+}
