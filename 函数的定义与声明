@@ -1,0 +1,48 @@
+函数形参的传值与传地址：
+当实参传递给形参的时候，实际只是实参的一份临时拷贝，对形参的修改不会影响实参；
+void swap(int*x, int*y) {//交换两个整形数据
+    int temp;
+    temp = *x;//*解引用符号，指向指针所指向的地址数据
+    *x = *y;
+    *y = temp;
+    
+}
+int main() {
+    int a = 10, b = 20;
+    printf("%d,%d\n", a, b);
+    
+    swap(&a,&b);/形参是地址指针，所以用取地址
+    printf("%d,%d\n", a, b);
+    return 0;
+}
+当函数进行调用时分为：传值调用和传地址调用；
+传值调用：对形参的的操作不会硬性实参的操作；
+传地址：会对实参产生作用；
+int add(int *num) {
+    (*num)++;//不能写*num++,因为这样会使++作用于num，而不是*num；
+}
+int main() {
+    int num = 0;
+    add(&num);
+    printf("%d ", num);
+    return 0;
+}
+函数的链式访问：把一个函数的返回值作为另一个函数的返回值；
+int main() {
+    
+    printf("%d ",printf("%d",printf("%d", printf("%d", 43))));//printf函数返回的是打印字符的个数：
+    return 0;                                                //43211
+}
+在定义函数的时候，函数要放在主函数之前，或者在主函数之前进行声明函数：
+一般在进行开发的时候会把对函数的声明放在.h头文件文件内，而函数的实现放在.c源文件内
+as：
+int add(int,int);//声明函数——()内可以只写数据类型；也可以写形参
+int main() {
+    int a, b;
+    a = 10, b = 230;
+    printf("%d", add(a, b));
+    return 0;                                                //43211
+}
+int add(int x, int y) {
+    return x + y;
+}
