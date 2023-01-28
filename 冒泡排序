@@ -1,0 +1,18 @@
+void bubble_sort(int arr[],int len) {
+    int i,temp,flag;
+    int j = 0;
+    for (i = 0; i <len-1; i++) {//确定的趟数
+        flag = 1;//比较标识符，如果这一趟比较没有产生交换就表明数据已经有序
+        for (j = 0; j < len-1-i;j++) {//每一趟比较几次
+            if (arr[j] > arr[j + 1])
+            {
+                temp =arr[j];
+                arr[j] = arr[j + 1];
+                arr[j+1] = temp;
+                flag = 0;//产生交换改变标识
+            }
+            
+        }
+        if (flag == 1) break;//标识符判断，提前结束排序
+    }
+}
