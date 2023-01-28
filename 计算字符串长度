@@ -1,0 +1,14 @@
+int my_strlen(char* arr) {//循环的方法
+    int num = 0;
+    while((*arr)!='\0'){
+        num++;
+        arr++;
+    }
+    return num;
+}
+int my_strlen(char* arr) {//递归的方法
+    if (*arr != '\0') {
+        return 1 + my_strlen(arr + 1);
+    }
+    else return 0;
+}
