@@ -1,0 +1,8 @@
+int digitsum(unsigned int n) {
+    if(n!=0){
+        int g = 0;
+        g = n % 10;
+        return g + digitsum(n / 10);
+    }
+    return 0;
+}
