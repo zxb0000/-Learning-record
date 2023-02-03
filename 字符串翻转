@@ -1,0 +1,32 @@
+int Mstrlen(char arr[]) {
+    char* star = arr;
+    char* end = arr;
+    while ((*end)!='\0') {
+        end++;
+    }
+    return end - star;
+}
+void print(char arr[]) {
+    char* p=arr;
+    while ((*p) != '\0') {
+        printf("%c ", *p);
+        p++;
+    }
+}
+void Mrevers(char arr[]) {
+    int sz = Mstrlen(arr);
+    char temp;
+    temp = *arr;
+    *arr = arr[sz - 1];
+    arr[sz - 1] = '\0';
+    if (Mstrlen(arr + 1) > 1)
+        Mrevers(arr + 1);
+    arr[sz - 1] = temp;
+}
+int main() {
+    char arr[] = "abcdef";
+    
+    Mrevers(arr);
+    print(arr);
+    return 0;
+}
