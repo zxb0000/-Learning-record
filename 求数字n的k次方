@@ -1,0 +1,10 @@
+double pow(int n, int k) {
+    if (k < 0) {
+        return 1.0 / pow(n, -k);
+    }
+    if (k == 0)
+        return 1;
+    else
+        return n * pow(n, k - 1);
+    
+}
