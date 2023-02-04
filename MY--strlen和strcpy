@@ -1,0 +1,15 @@
+int my_strlen(const char arr[]) {//求字符串长度
+	int count = 0;
+	while (*arr != '\0')
+	{
+		arr++;
+		count++;
+	}
+	return count;
+}
+char* my_strcopy(char arr[], const char arr1[]) {//复制字符串
+	char* ret = arr;
+	assert(arr1 != NULL);
+	while (*arr++ = *arr1++);
+	return ret;
+}
