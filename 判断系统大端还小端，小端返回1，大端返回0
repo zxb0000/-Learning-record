@@ -1,0 +1,4 @@
+int check_sys() {//判断系统大端还小端，小端返回1，大端返回0
+	int a = 1;
+	return * (char*) & a;
+}
